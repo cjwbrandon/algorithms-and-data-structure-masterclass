@@ -1,8 +1,7 @@
 function selectionSort(arr) {
-  let noSwaps, smallest;
+  let smallest;
   // Loop through array
   for (let i = 0; i < arr.length; i++) {
-    noSwaps = true;
     // 1. Store the first element as the smallest value
     smallest = i;
     // Loop through array
@@ -10,10 +9,8 @@ function selectionSort(arr) {
       // if smaller value is found, designate smaller number to be the new minimum
       if (arr[j] < arr[smallest]) {
         smallest = j;
-        noSwaps = false;
       }
     }
-    if (noSwaps) break;
     // If minimum is not initial value, swap positions
     if (smallest !== i) [arr[i], arr[smallest]] = [arr[smallest], arr[i]];
   }
